@@ -1,4 +1,3 @@
-
 #' National High Safety Fatality Report Data Reader
 #' \code{fars_read} will read data from the National Highway Traffic Safety
 #' Administration's Fatality Analysis Reporting System into a dplyr
@@ -14,8 +13,8 @@
 #' Or if the file does not exist in the directory
 #' Or is the file is not a csv file
 #'
-#' @importFrom \code{readr read_csv}
-#' @importFrom dplyr tbl_df
+#' @import readr
+#' @import dplyr
 #'
 #' @examples
 #' fars_read("accident_2013.csv.bz2")
@@ -50,7 +49,7 @@ fars_read <- function(filename) {
 make_filename <- function(year) {
   year <- as.integer(year)
   fp <- sprintf("accident_%d.csv.bz2",year)
-  return(fp)
+  return(file.path('inst/extdata',fp))
   #system.file('extdata',fp,package='farsss')
 }
 
@@ -113,11 +112,8 @@ fars_read_years <- function(years) {
 #' @note Errors will be thrown if the argument years are non-numeric
 #' Or if the file does not exist in the directory
 #' Or is the file is not a csv file
-#' @importedFrom dplyr bind_rows
-#' @importedFrom dplyr group_by
-#' @importedFrom dplyr summarize
-#' @importedFrom dplyr spread
-#' @importedFrom magritter %>%
+#' @import dplyr
+#' @import magrittr
 #' @examples
 #' fars_summarize_years(2013:2015)
 #' fars_summarize_years(c(2013,2015))
@@ -145,9 +141,9 @@ fars_summarize_years <- function(years) {
 #' @examples
 #' fars_map_state(5,2015)
 #'
-#' @importedFrom dplyr filter
-#' @importedFrom maps map
-#' @importedFrom graphics point
+#' @import dplyr
+#' @import maps
+#' @import graphics
 #'
 #' @note Errors will be thrown if the argument years are non-numeric
 #' Or if the file does not exist in the directory
