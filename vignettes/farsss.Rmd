@@ -1,0 +1,43 @@
+---
+title: "farsss"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{farsss}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This package is for analyzing and visualizing data from US National Highway Traffic Safety Administration's Fatality Analysis Reporting System
+
+To install the package run the following piece of code
+```{r, eval=F}
+devtools::install_github("https://github.com/AseemGill/R_Repo")
+```
+
+There are three main functions in this code
+
+1.fars_read(filename)
+This function will read in csv data on the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System as a dplyr tibble
+
+```{r, eval = F}
+x <- fars_read("./accident_2015.csv.bz2")
+```
+
+2.fars_summarize_years(years)
+This function will summarize the data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System dataset of only the inputted years and it will provide counts of fatalities every month for the inputted years.
+``` {r, eval= F}
+x <- fars_summarize_years(2015)
+head(x)
+```
+
+3.fars_map_state(state.num,years)
+This function will generate a plot of the fatalities for the inputted state and the inputted years. If there are no fatalities it will display a message indicating so. 
+
+```{r,eval= F}
+fars_map_state(5,2013)
+```
+

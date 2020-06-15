@@ -1,0 +1,15 @@
+Package: farsss
+Type: Package
+Title: Analyzing and Visualizes Fatality Report
+Version: 0.1.0
+Author: Aseem Gill
+Maintainer: Aseem Gill <aseemgill01@gmail.com>
+Description: Analyzing and Visualizes Fatality Report Data
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
