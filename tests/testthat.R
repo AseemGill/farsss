@@ -1,3 +1,3 @@
 library(testthat)
 devtools::install_github("https://github.com/AseemGill/farsss/tree/master/inst/extdata")
-test_that("make_filename",expect_equal(farsss::make_filename(2015),"inst/extdata/accident_2015.csv.bz2",auth_token="c2bf2f93035ee5705a8a108939a0bc5ca7985875"))
+expect_that(make_filename(2015), is_a("character"))
