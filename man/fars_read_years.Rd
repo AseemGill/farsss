@@ -41,7 +41,8 @@ Or if the file does not exist in the directory
 Or is the file is not a csv file
 }
 \examples{
+\dontrun{
 fars_read_years(2013:2015)
 fars_read_years(c(2013,2015))
-
+}
 }

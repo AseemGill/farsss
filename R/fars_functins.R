@@ -17,8 +17,9 @@
 #' @import dplyr
 #'
 #' @examples
+#' \dontrun{
 #' fars_read("accident_2013.csv.bz2")
-#'
+#' }
 #'@export
 fars_read <- function(filename) {
   if(!file.exists(filename))
@@ -42,9 +43,10 @@ fars_read <- function(filename) {
 #' @note Errors will be thrown if the input year is not a numeric
 #'
 #' @examples
+#' \dontrun{
 #' make_filename(2015)
 #' make_filename(2013)
-#'
+#' }
 #'@export
 make_filename <- function(year) {
   year <- as.integer(year)
@@ -79,10 +81,12 @@ make_filename <- function(year) {
 #' @note Errors will be thrown if the argument years are non-numeric
 #' Or if the file does not exist in the directory
 #' Or is the file is not a csv file
+#'
 #' @examples
+#' \dontrun{
 #' fars_read_years(2013:2015)
 #' fars_read_years(c(2013,2015))
-#'
+#' }
 #'@export
 fars_read_years <- function(years) {
   lapply(years, function(year) {
@@ -114,9 +118,10 @@ fars_read_years <- function(years) {
 #' @import dplyr
 #' @import magrittr
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(2013:2015)
 #' fars_summarize_years(c(2013,2015))
-#'
+#' }
 #' @export
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
@@ -139,11 +144,11 @@ fars_summarize_years <- function(years) {
 #'
 #' @examples
 #' fars_map_state(5,2015)
-#'
+#' \dontrun{
 #' @import dplyr
 #' @import maps
 #' @import graphics
-#'
+#' }
 #' @note Errors will be thrown if the argument years are non-numeric
 #' Or if the file does not exist in the directory
 #' Or is the file is not a csv file

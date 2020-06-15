@@ -25,7 +25,8 @@ in the format of \code{accident_year.csv.bz}.
 Errors will be thrown if the input year is not a numeric
 }
 \examples{
+\dontrun{
 make_filename(2015)
 make_filename(2013)
-
+}
 }
