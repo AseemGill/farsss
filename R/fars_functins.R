@@ -1,4 +1,3 @@
-library(roxygen2)
 
 #' National High Safety Fatality Report Data Reader
 #' \code{fars_read} will read data from the National Highway Traffic Safety
